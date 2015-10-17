@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
-<!-- 2015-10-17T14:17:38 -->
+<!-- 2015-10-17T14:19:55 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="crosstab" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="16eddf64-7231-432b-a2eb-14a8e1fe9d94">
 	<property name="net.sf.jasperreports.export.xls.one.page.per.sheet" value="true"/>
 	<property name="newproperty" value="true"/>
@@ -189,21 +189,6 @@ from gastos g inner join pessoa p on g.id_pessoa=p.id]]>
 		<field name="VALOR" class="java.lang.Double"/>
 		<field name="NOME" class="java.lang.String"/>
 	</subDataset>
-	<subDataset name="Dataset2" uuid="1390572f-3c59-4dbf-aece-31778bcd821c">
-		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="curso_jasper"/>
-		<queryString>
-			<![CDATA[select strftime('%Y', g.data) || strftime('%m', g.data) as data, g.valor, g.descricao, p.nome
-from gastos g inner join pessoa p on g.id_pessoa=p.id]]>
-		</queryString>
-		<field name="data" class="java.lang.String"/>
-		<field name="VALOR" class="java.lang.Double"/>
-		<field name="DESCRICAO" class="java.lang.String"/>
-		<field name="NOME" class="java.lang.String"/>
-		<group name="DESCRICAO">
-			<groupExpression><![CDATA[$F{DESCRICAO}]]></groupExpression>
-		</group>
-	</subDataset>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -248,7 +233,7 @@ from gastos g inner join pessoa p on g.id_pessoa=p.id]]>
 		</band>
 	</pageFooter>
 	<summary>
-		<band height="268">
+		<band height="88">
 			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<crosstab>
 				<reportElement x="0" y="10" width="555" height="62" uuid="51e95575-0b83-4774-890b-a166ed5dbeb1">
