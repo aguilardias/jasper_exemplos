@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
-<!-- 2015-10-16T15:43:23 -->
+<!-- 2015-10-18T10:58:29 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subreport-profissoes" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="fd712706-041b-427e-9f27-3506d662013f">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="curso_jasper"/>
@@ -13,30 +13,13 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="id_area" class="java.lang.Integer"/>
 	<queryString>
-		<![CDATA[select * from profissao p inner join area a on p.id_area=a.id]]>
+		<![CDATA[select * from profissao where id_area=$P{id_area}]]>
 	</queryString>
-	<field name="ID" class="java.lang.Integer"/>
-	<field name="PROFISSAO" class="java.lang.String"/>
-	<field name="ID_AREA" class="java.lang.Integer"/>
-	<field name="COLUMN_4" class="java.lang.Integer"/>
-	<field name="AREA" class="java.lang.String"/>
-	<group name="ID_AREA">
-		<groupExpression><![CDATA[$F{AREA}]]></groupExpression>
-		<groupHeader>
-			<band height="20">
-				<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-				<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
-				<textField>
-					<reportElement x="0" y="0" width="595" height="20" uuid="cbe21fcb-d152-4aaa-87c6-f95f738244f0">
-						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
-						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-					</reportElement>
-					<textFieldExpression><![CDATA[$F{AREA}]]></textFieldExpression>
-				</textField>
-			</band>
-		</groupHeader>
-	</group>
+	<field name="ID" class="java.lang.Object"/>
+	<field name="PROFISSAO" class="java.lang.Object"/>
+	<field name="ID_AREA" class="java.lang.Object"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -44,8 +27,8 @@
 		<band height="20" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<staticText>
-				<reportElement x="0" y="0" width="100" height="20" uuid="08d183e9-4026-45af-9ad6-867930350c9c"/>
-				<text><![CDATA[title subreport]]></text>
+				<reportElement x="10" y="0" width="100" height="20" uuid="08d183e9-4026-45af-9ad6-867930350c9c"/>
+				<text><![CDATA[profissões:]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -53,8 +36,7 @@
 		<band height="40" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<textField>
-				<reportElement x="10" y="10" width="100" height="20" uuid="88c4d09d-a477-42b6-9477-657bc4f47c5c">
-					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				<reportElement x="20" y="10" width="100" height="20" uuid="88c4d09d-a477-42b6-9477-657bc4f47c5c">
 					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>

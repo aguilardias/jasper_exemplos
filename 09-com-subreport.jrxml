@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
-<!-- 2015-10-16T15:42:34 -->
+<!-- 2015-10-18T11:26:57 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="com-subreport" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="269a2f1f-e688-461e-8130-c11e0a980964">
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
@@ -14,8 +14,10 @@
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="curso_jasper"/>
 	<queryString>
-		<![CDATA[]]>
+		<![CDATA[select * from area]]>
 	</queryString>
+	<field name="ID" class="java.lang.Object"/>
+	<field name="AREA" class="java.lang.Object"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -31,7 +33,7 @@
 		</band>
 	</title>
 	<pageHeader>
-		<band height="20">
+		<band height="36">
 			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<staticText>
 				<reportElement x="0" y="0" width="100" height="20" uuid="ac951333-8e2e-41bb-8683-dd982d5c36ae">
@@ -42,6 +44,31 @@
 			</staticText>
 		</band>
 	</pageHeader>
+	<detail>
+		<band height="80">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<subreport>
+				<reportElement x="0" y="30" width="555" height="40" uuid="12dde900-0ae2-427f-8a57-e55b5b6784bd">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<subreportParameter name="id_area">
+					<subreportParameterExpression><![CDATA[$F{ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["09-subreport-profissoes.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement x="0" y="10" width="100" height="20" uuid="d9a16ec7-5dd9-4b47-81e1-c5f54ad1121e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{AREA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-67" y="19" width="100" height="30" uuid="aae8ee3c-3861-4fe6-aa41-e3a678dfe25f"/>
+				<text><![CDATA[AREA]]></text>
+			</staticText>
+		</band>
+	</detail>
 	<pageFooter>
 		<band height="54" splitType="Stretch">
 			<staticText>
@@ -60,15 +87,4 @@
 			</textField>
 		</band>
 	</pageFooter>
-	<summary>
-		<band height="40">
-			<subreport>
-				<reportElement x="0" y="0" width="555" height="40" uuid="12dde900-0ae2-427f-8a57-e55b5b6784bd">
-					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
-				</reportElement>
-				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA["9-subreport-profissoes.jasper"]]></subreportExpression>
-			</subreport>
-		</band>
-	</summary>
 </jasperReport>
