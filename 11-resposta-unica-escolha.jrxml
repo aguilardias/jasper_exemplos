@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
+<!-- 2015-11-11T22:17:22 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="11-resposta-unica-escolha" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="75d65657-9334-414b-97fa-21919700b7b6">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="curso_jasper"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="id_pergunta" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[select * from resposta where id_pergunta=$P{id_pergunta}]]>
+	</queryString>
+	<field name="id" class="java.lang.Object"/>
+	<field name="id_pergunta" class="java.lang.Object"/>
+	<field name="resposta" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="37" splitType="Stretch">
+			<textField>
+				<reportElement x="30" y="11" width="176" height="16" uuid="fef767a8-65f1-433b-b108-160405d4e8df"/>
+				<textFieldExpression><![CDATA[$F{resposta}]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="10" y="14" width="10" height="10" uuid="5413b008-2caf-4574-ad60-5696db661ab9">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</ellipse>
+		</band>
+	</detail>
+</jasperReport>
